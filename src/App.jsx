@@ -124,29 +124,54 @@ const App = () => {
           </ul>
         </div>
 
-        <div className="basis-[40%]">
-          <h3 className="text-2xl font-bold mb-2">Recent Transactions</h3>
-          <ul>
-            {[1, 2, 3].map((data) => (
-              <li className={`${(data % 2) == 0 ? '' : 'bg-white'} py-1 rounded-lg`} key={data}>
-                <div className="flex items-center justify-around">
-                  <p className="text-slate-400">20 August</p>
-                  <div className="basis-1/2">
-                    <p className="font-semibold">Door Handle Replacement</p>
-                    <span className="italic text-slate-400">
-                      Bills & Utilities
-                    </span>
+        <div className="basis-[40%] space-y-4">
+          <div>
+            <h3 className="text-2xl font-bold mb-2">Recent Transactions</h3>
+            <ul>
+              {[1, 2, 3].map((data) => (
+                <li
+                  className={`${
+                    data % 2 == 0 ? "" : "bg-white"
+                  } py-1 rounded-lg`}
+                  key={data}
+                >
+                  <div className="flex items-center justify-around">
+                    <p className="text-slate-400">20 August</p>
+                    <div className="basis-1/2">
+                      <p className="font-semibold">Door Handle Replacement</p>
+                      <span className="italic text-slate-400">
+                        Bills & Utilities
+                      </span>
+                    </div>
+
+                    <p className="font-semibold">$360</p>
+
+                    <button className="text-green-600 font-semibold bg-green-200 p-1.5 rounded-lg">
+                      Cash
+                    </button>
                   </div>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-                  <p className="font-semibold">$360</p>
+          <div className="space-y-4">
+            <h3 className="text-2xl font-bold mb-2">Add Expenses</h3>
 
-                  <button className="text-green-600 font-semibold bg-green-200 p-1.5 rounded-lg">
-                    Cash
-                  </button>
-                </div>
-              </li>
-            ))}
-          </ul>
+            <div className="flex space-x-4">
+              <button className="flex-1 py-3 bg-white rounded-lg font-semibold cursor-pointer transition-all duration-300 hover:bg-secondary">
+                Add Expense
+              </button>
+              <button className="flex-1 py-3 bg-white rounded-lg font-semibold cursor-pointer transition-all duration-300 hover:bg-secondary">
+                Add Expense Category
+              </button>
+            </div>
+            <div className="flex space-x-4">
+              <button className="flex-1 py-3 bg-white rounded-lg font-semibold cursor-pointer transition-all duration-300 hover:bg-secondary">
+                View Categories
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </div>
